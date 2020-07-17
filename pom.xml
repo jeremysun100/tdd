@@ -72,6 +72,7 @@
 						<configuration>
 							<includes>
 								<include>/com/demo/tdd/services/**/*.class</include>
+								<include>/com/demo/tdd/*.class</include>
 							</includes>
 						</configuration>
 					</execution>
