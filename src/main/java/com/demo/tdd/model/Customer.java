@@ -24,12 +24,6 @@ public class Customer {
 		this.displayName = displayName;
 	}
 
-	@Override
-	public String toString() {
-		return "Customer{" + "username='" + username + '\'' + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", gender='" + gender
-				+ '\'' + ", displayName='" + displayName + '\'' + '}';
-	}
-
 	public String getUsername() {
 		return username;
 	}
