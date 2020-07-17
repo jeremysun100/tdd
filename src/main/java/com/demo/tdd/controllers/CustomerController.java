@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.tdd.model.Customer;
-import com.demo.tdd.model.MACustomer;
 import com.demo.tdd.services.CustomerService;
 
 @RestController
@@ -18,8 +17,8 @@ public class CustomerController {
 	private CustomerService customerService;
 
 	@GetMapping("customers/{username}")
-	public MACustomer getMACustomer(@PathVariable String username) {
-		return customerService.getMACustomerByUsername(username);
+	public Customer getMACustomer(@PathVariable String username) {
+		return customerService.getCustomerByUsername(username);
 	}
 
 	@PostMapping("customers")

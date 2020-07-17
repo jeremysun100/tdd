@@ -1,19 +1,19 @@
 package com.demo.tdd.services;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
 import static org.mockito.Mockito.*;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import com.demo.tdd.model.Customer;
-import com.demo.tdd.model.MACustomer;
 import com.demo.tdd.repository.CustomerRepository;
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class CustomerServiceImplTest {
 
 	@InjectMocks
@@ -24,8 +24,8 @@ public class CustomerServiceImplTest {
 
 	@Test
 	public void test_MaleCustomer() {
-		when(customerRepository.findByUsername("jeremysun")).thenReturn(new Customer("jeremysun", "Jeremy", "Sun", "M"));
-		MACustomer maCustomer = customerService.getMACustomerByUsername("jeremysun");
+		when(customerRepository.findByUsername("jeremysun")).thenReturn(new Customer("jeremysun", "Jeremy", "Sun", "M", null));
+		Customer maCustomer = customerService.getCustomerByUsername("jeremysun");
 		assertThat(maCustomer.getUsername()).isEqualTo("jeremysun");
 		assertThat(maCustomer.getFirstName()).isEqualTo("Jeremy");
 		assertThat(maCustomer.getLastName()).isEqualTo("Sun");
@@ -35,9 +35,9 @@ public class CustomerServiceImplTest {
 
 	@Test
 	public void test_femaleCustomer() {
-		when(customerRepository.findByUsername("janedoe")).thenReturn(new Customer("janedoe", "Jane", "Doe", "F"));
-		MACustomer maCustomer = customerService.getMACustomerByUsername("janedoe");
-		assertThat(maCustomer.getDisplayName()).isEqualTo("Mrs. Jane Doe");
+		when(customerRepository.findByUsername("janedoe")).thenReturn(new Customer("janedoe", "Jane", "Doe", "F", null));
+		Customer customer = customerService.getCustomerByUsername("janedoe");
+		assertThat(customer.getDisplayName()).isEqualTo("Mrs. Jane Doe");
 	}
 
 }
