@@ -69,6 +69,11 @@
 						<goals>
 							<goal>report</goal>
 						</goals>
+						<configuration>
+							<includes>
+								<include>/com/demo/tdd/services/**/*.class</include>
+							</includes>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>

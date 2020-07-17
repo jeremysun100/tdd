@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.tdd.model.Customer;
-import com.demo.tdd.services.CustomerService;
 
 @RestController
 public class CustomerController {
