@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class CustomTest {
 
 	@Test
-	void testFunc() {
+	void testEcho() {
 		CustomServiceImpl customService = new CustomServiceImpl();
 		assertThat(customService.echo("echo")).isEqualTo("echo");
 	}
